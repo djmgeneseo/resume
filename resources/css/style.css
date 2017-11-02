@@ -1,0 +1,786 @@
+/* Carrot color: #e67e22 */
+
+
+/* ------------------------------------------- */
+/* ------- BASIC SETUP ------- */
+/* ------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #494949;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    /* For small resolution: removes horizontal bar on bottom  */
+    overflow-x: hidden;
+}
+
+
+/* ------------------------------------------- */
+/* ------- REUSABLE COMPONENTS ------- */
+/* ------------------------------------------- */
+
+/* To indent content from sides and orient center */
+.row {
+    /* the only value for positioning (aside from margin/padding) that uses pixles for the website */
+    max-width: 1140px;
+    /*margin: 0 auto 0 auto;*/
+    margin: 0 auto;
+}
+
+/* produce whitespace */
+section {
+    padding: 80px 0; 
+}
+
+.box {
+    padding: 1%;
+}
+
+/* clear floats: important after using float properties to clear floats. Call this in the parent of an element with float property.
+    - html doesn't record pixels for elements with float property
+    - restore pixel calculation to correct padding issues concerning elements that proceed elements with float properties
+*/
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* ------------------------------------------- */
+/* ------- Headings ------- */
+/* ------------------------------------------- */
+
+h1, 
+h2, 
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    /* correct unwanted margin space above header from normalize.css */
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    /* relative to font size set in html parent css rule */
+    font-size: 240%;
+    word-spacing: 4px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+    
+}
+
+
+/* ------------------------------------------- */
+/* ------- PARAGRAPHS ------- */
+/* ------------------------------------------- */
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    /* To center: cut remaining pixels in half: 30% / 2 = 15% */
+    margin-left: 15%;
+}
+
+.box p {
+    font-size:90%;
+    line-height: 145%;
+}
+
+
+/* ------------------------------------------- */
+/* ------- ICONS ------- */
+/* ------------------------------------------- */
+
+.icon-big {
+    font-size: 250%;
+    /* Block in order to force a line-break */
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    -webkit-transform: translate(-30%, 0);
+    transform: translate(-30%, 0);
+}
+
+.icon-small {
+    /* To give each icon space afterwards and access to width class */
+    display: inline-block;
+    color: #e67e22;
+    width: 30px;
+    font-size: 120%;
+    margin-right: 10px;
+    margin-top: -5px;
+}
+
+
+/* ------------------------------------------- */
+/* ------- LINKS ------- */
+/* ------------------------------------------- */
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 200ms, color 200ms;
+    transition: border-bottom 200ms, color 200ms;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ------------------------------------------- */
+/* ------- BUTTONS ------- */
+/* ------------------------------------------- */
+
+.btn:link, 
+.btn:visited,
+input[type=submit] {
+    /* change in-line property of <a> for this element to inline-block to have them appear side-by-siode, and to give them padding and margin capabilities*/
+    display: inline-block;
+    padding: 10px 33px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color: #fff;
+    -webkit-transition: background-color 200ms, border 200ms, color 200ms;
+    transition: background-color 200ms, border 200ms, color 200ms;
+}
+
+.btn-full:link, 
+.btn-full:visited,
+input[type=submit] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    margin-right: 15px;
+}
+
+.btn-ghost:link, 
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover, 
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #bf6516;
+    border: 1px solid #bf6516;
+    color: #fff;
+}
+
+/* ------------------------------------------- */
+/* ------- HEADER ------- */
+/* ------------------------------------------- */
+
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0,0,0,0.7))), url(img/jumbotron-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)), url(img/jumbotron-min.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    /* image stays in the same place */
+    background-attachment: fixed;
+}
+
+.jumbotron-text-box {
+    /* Won't use flow grid, b/c we want this text to be absolutely positioned */
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    /* half of width and height up and to left */
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+/* Main navigation */
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    /* Padding: Top-Bottom, Left-Right */
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid #e67e22 transparent;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 13px;
+}
+
+.back-to-top {
+    display: none;
+}
+
+/* Mobile navigation */
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    /* Pointer now reacts to link like it's a button */
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+/* Sticky navigation */
+.sticky {
+    /* irrespective of scrolling */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    -webkit-box-shadow: 0 2px 2px #f0f0f0;
+    box-shadow: 0 2px 2px #f0f0f0;
+    z-index: 9999;
+    -webkit-transition: 250ms;
+    transition: 250ms;
+}
+
+.sticky .main-nav { margin-top: 18px;}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    border-bottom: none;
+    padding: 5px 0;
+    color: #555;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
+
+.logo-black { 
+    display: none; 
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 6px 0;
+}
+
+.sticky .back-to-top {
+    display: inline-block;
+}
+
+/* ------------------------------------------- */
+/* ------- FEATURES ------- */
+/* ------------------------------------------- */
+
+.section-features .long-copy {
+    margin-bottom: 40px;
+}
+
+
+/* ------------------------------------------- */
+/* ------- MEALS ------- */
+/* ------------------------------------------- */
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    /* Share exact width of parent: .meals-showcase li */
+    width: 100%;
+    margin: 0;
+    /* prevent image (after being transformed to 115%) from overflowing onto other figure containers that surround it */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.meal-photo img {
+    opacity: 0.7;
+    /* Share exact width of parent: .meal-photo */
+    width: 100%;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: opacity 500ms, -webkit-transform 500ms;
+    transition: opacity 500ms, -webkit-transform 500ms;
+    transition: transform 500ms, opacity 500ms;
+    transition: transform 500ms, opacity 500ms, -webkit-transform 500ms;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+
+/* ------------------------------------------- */
+/* ------- HOW IT WORKS ------- */
+/* ------------------------------------------- */
+
+/* suble shade difference to new section */
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+/* Selects first of the 'steps-box'es, which is the picture */
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+/* Same as :last-child */
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    /* No line break, # can be side-by-side with the text */
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    margin-right: 25px;
+    font-size: 150%;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+/* ------------------------------------------- */
+/* ------- CITIES ------- */
+/* ------------------------------------------- */
+
+.section-cities img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px;
+}
+
+
+/* ------------------------------------------- */
+/* ------- TESTIMONIALS ------- */
+/* ------------------------------------------- */
+
+.section-testimonials {
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.8)),to(rgba(0,0,0,0.8))),url(img/back-customers-min.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/back-customers-min.jpg);
+    background-size: cover;
+    color: #fff;
+    /* image stays in same place */
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 2%;
+    /* can simply choose italic b/c we included with google fonts at <head> */
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote:before {
+    display: block;
+    /* css-tricks.com/snippets/html/glyphs */
+    content: "\201C"; 
+    font-size: 400%;
+    position: absolute;
+    top: 0;
+    left: -8px;
+}
+
+blockquote:after {
+    display: block;
+    content:"\201D";
+    font-size: 400%;
+    position: absolute;
+    left: 93%;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img {
+    border-radius: 50%;
+    height: 75px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* ------------------------------------------- */
+/* ------- PLANS ------- */
+/* ------------------------------------------- */
+
+.section-plans {
+    background-color: #f5f5f5;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    /* x axis offset, y axis offset, blur, color */
+    -webkit-box-shadow: 2px 2px 2px #e2e2e2;
+    box-shadow: 2px 2px 2px #e2e2e2;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 80%;
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #e67e22;
+}
+
+.plan-price span {
+    /* Relative to size in parent (.plan-price) */
+    font-size: 38%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 85%;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box li {
+    padding: 5px 0;
+}
+
+.plan-box li p {
+    display: inline-block;
+}
+
+
+/* ------------------------------------------- */
+/* ------- FORM ------- */
+/* ------------------------------------------- */
+
+.form-bg {
+    border: 1.25px solid #f4f4f4;
+}
+
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size:15px;
+}
+
+.checkbox-text {
+    display: inline;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+select {
+    height: 34px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=submit] {
+    font-size: 15px;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus {outline: none;}
+
+.map-box {
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+.map {
+    width: 100%;
+    height: 580px;
+    position: relative;
+    z-index: 0;
+}
+
+.form-box {
+    height: 580px;
+    width: 50%;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.74);
+    /* Higher index = first we see */
+    z-index: 10;
+}
+
+/*
+**FOR PHP** 
+.form-message {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.success { background-color: rgba(36, 235, 0, 0.6); }
+
+.error { background-color: rgba(255, 0, 0, 0.6); }
+**FOR PHP**
+*/
+
+/* ------------------------------------------- */
+/* ------- FOOTER ------- */
+/* ------------------------------------------- */
+
+footer {
+    background-color: #272727;
+    padding: 45px;
+    font-size: 90%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-icons {
+    list-style: none;
+    float: right;
+    margin-top: -5px;
+}
+
+.footer-nav li,
+.social-icons li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+    color: #696969;
+    text-decoration: none;
+    border: 0;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-icons li a:hover,
+.social-icons li a:active {
+    color: #fff;
+}
+
+.social-icons li a:link,
+.social-icons li a:visited {
+    font-size: 145%;
+}
+
+.ion-social-facebook {
+    color: #3b5998;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+}
+
+.ion-social-twitter {
+    color: #00aced;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+}
+
+.ion-social-googleplus {
+    color: #dd4b39;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+}
+
+.ion-social-instagram {
+    color: #517fa4;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+}
+
+.social-icons li i:hover,
+.social-icons li i:active {
+    color: #fff;
+}
+
+/* ------------------------------------------- */
+/* ------- SCROLL ANIMATIONS ------- */
+/* ------------------------------------------- */
+
+.js--animation-waypoint-features,
+.js--animation-waypoint-phone,
+.js--animation-waypoint-quotes-1,
+.js--animation-waypoint-quotes-2,
+.js--animation-waypoint-quotes-3,
+.js--animation-waypoint-plan-1,
+.js--animation-waypoint-plan-2,
+.js--animation-waypoint-form { opacity: 0; }
+
+.js--animation-waypoint-features.animated, 
+.js--animation-waypoint-phone.animated,
+.js--animation-waypoint-quotes.animated,
+.js--animation-waypoint-quotes-1.animated,
+.js--animation-waypoint-quotes-2.animated,
+.js--animation-waypoint-quotes-3.animated, 
+.js--animation-waypoint-plan-1.animated,
+.js--animation-waypoint-plan-2.animated,
+.js--animation-waypoint-form.animated { opacity: 1; }
