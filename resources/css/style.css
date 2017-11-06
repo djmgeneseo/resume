@@ -337,46 +337,20 @@ header {
     display: inline-block;
 }
 
-/* ------------------------------------------- */
-/* ------- FEATURES ------- */
-/* ------------------------------------------- */
-
-.section-features .long-copy {
-    margin-bottom: 40px;
-}
-
-
-/* ------------------------------------------- */
-/* ------- MEALS ------- */
-/* ------------------------------------------- */
-
-.section-meals {
-    padding: 0;
-}
-
-.meals-showcase {
-    list-style: none;
-    width: 100%;
-}
-
-.meals-showcase li {
-    display: block;
-    float: left;
-    width: 25%;
-}
-
+/*
 .meal-photo {
-    /* Share exact width of parent: .meals-showcase li */
+    // Share exact width of parent: .meals-showcase li 
     width: 100%;
     margin: 0;
-    /* prevent image (after being transformed to 115%) from overflowing onto other figure containers that surround it */
+    //prevent image (after being transformed to 115%) from overflowing onto other figure containers 
+    //that surround it
     overflow: hidden;
     background-color: #000;
 }
 
 .meal-photo img {
     opacity: 0.7;
-    /* Share exact width of parent: .meal-photo */
+    //Share exact width of parent: .meal-photo
     width: 100%;
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
@@ -392,94 +366,12 @@ header {
     transform: scale(1.03);
 }
 
-
-/* ------------------------------------------- */
-/* ------- HOW IT WORKS ------- */
-/* ------------------------------------------- */
-
-/* suble shade difference to new section */
-.section-steps {
-    background-color: #f4f4f4;
-}
-
-/* Selects first of the 'steps-box'es, which is the picture */
-.steps-box:first-child {
-    text-align: right;
-    padding-right: 3%;
-    margin-top: 30px;
-}
-
-.steps-box:last-child {
-    padding-left: 3%;
-    margin-top: 70px;
-}
-
-.app-screen {
-    width: 40%;
-}
-
-.works-step {
-    margin-bottom: 50px;
-}
-
-/* Same as :last-child */
-.works-step:last-of-type {
-    margin-bottom: 80px;
-}
-
-.works-step div {
-    color: #e67e22;
-    border: 2px solid #e67e22;
-    /* No line break, # can be side-by-side with the text */
-    display: inline-block;
-    border-radius: 50%;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    padding: 5px;
-    float: left;
-    margin-right: 25px;
-    font-size: 150%;
-}
-
-.btn-app:link,
-.btn-app:visited {
-    border: 0;
-}
+*/
 
 .btn-app img {
     height: 50px;
     width: auto;
     margin-right: 10px;
-}
-
-
-/* ------------------------------------------- */
-/* ------- CITIES ------- */
-/* ------------------------------------------- */
-
-.section-cities img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.city-feature {
-    margin-bottom: 5px;
-}
-
-
-/* ------------------------------------------- */
-/* ------- TESTIMONIALS ------- */
-/* ------------------------------------------- */
-
-.section-testimonials {
-    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.8)),to(rgba(0,0,0,0.8))),url(img/back-customers-min.jpg);
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/back-customers-min.jpg);
-    background-size: cover;
-    color: #fff;
-    /* image stays in same place */
-    background-attachment: fixed;
 }
 
 blockquote {
@@ -521,162 +413,6 @@ cite img {
     margin-right: 10px;
     vertical-align: middle;
 }
-
-
-/* ------------------------------------------- */
-/* ------- PLANS ------- */
-/* ------------------------------------------- */
-
-.section-plans {
-    background-color: #f5f5f5;
-}
-
-.plan-box {
-    background-color: #fff;
-    border-radius: 5px;
-    width: 90%;
-    margin-left: 5%;
-    /* x axis offset, y axis offset, blur, color */
-    -webkit-box-shadow: 2px 2px 2px #e2e2e2;
-    box-shadow: 2px 2px 2px #e2e2e2;
-}
-
-.plan-box div {
-    padding: 15px;
-    border-bottom: 1px solid #ebebeb;
-    font-size: 80%;
-}
-
-.plan-box div:first-child {
-    background-color: #fcfcfc;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.plan-box div:last-child {
-    text-align: center;
-    border: 0;
-}
-
-.plan-price {
-    font-size: 300%;
-    margin-bottom: 10px;
-    font-weight: 300;
-    color: #e67e22;
-}
-
-.plan-price span {
-    /* Relative to size in parent (.plan-price) */
-    font-size: 38%;
-    font-weight: 300;
-}
-
-.plan-price-meal {
-    font-size: 85%;
-}
-
-.plan-box ul {
-    list-style: none;
-}
-
-.plan-box li {
-    padding: 5px 0;
-}
-
-.plan-box li p {
-    display: inline-block;
-}
-
-
-/* ------------------------------------------- */
-/* ------- FORM ------- */
-/* ------------------------------------------- */
-
-.form-bg {
-    border: 1.25px solid #f4f4f4;
-}
-
-.contact-form {
-    width: 80%;
-    margin: 0 auto;
-}
-
-input[type=text],
-input[type=email],
-select,
-textarea {
-    width: 100%;
-    padding: 7px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    font-size:15px;
-}
-
-.checkbox-text {
-    display: inline;
-    font-size: 15px;
-    font-weight: 400;
-}
-
-select {
-    height: 34px;
-}
-
-textarea {
-    height: 100px;
-}
-
-input[type=submit] {
-    font-size: 15px;
-}
-
-input[type=checkbox] {
-    margin: 10px 5px 10px 0;
-}
-
-*:focus {outline: none;}
-
-.map-box {
-    width: 100%;
-    height: 580px;
-    position: relative;
-}
-
-.map {
-    width: 100%;
-    height: 580px;
-    position: relative;
-    z-index: 0;
-}
-
-.form-box {
-    height: 580px;
-    width: 50%;
-    padding-top: 50px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.74);
-    /* Higher index = first we see */
-    z-index: 10;
-}
-
-/*
-**FOR PHP** 
-.form-message {
-    width: 70%;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center; 
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.success { background-color: rgba(36, 235, 0, 0.6); }
-
-.error { background-color: rgba(255, 0, 0, 0.6); }
-**FOR PHP**
-*/
 
 /* ------------------------------------------- */
 /* ------- FOOTER ------- */
@@ -762,10 +498,11 @@ footer {
     color: #fff;
 }
 
+
 /* ------------------------------------------- */
 /* ------- SCROLL ANIMATIONS ------- */
 /* ------------------------------------------- */
-
+/*
 .js--animation-waypoint-features,
 .js--animation-waypoint-phone,
 .js--animation-waypoint-quotes-1,
@@ -784,3 +521,4 @@ footer {
 .js--animation-waypoint-plan-1.animated,
 .js--animation-waypoint-plan-2.animated,
 .js--animation-waypoint-form.animated { opacity: 1; }
+*/
