@@ -1,3 +1,16 @@
+/* Nephritis color: #27ae60 */
+/* Nephritis darker shade: #219251 */
+
+/* LinkedIn color: #0077B5 */
+/* LinkedIn darker shade: #005682 */
+/* LinkedIn lighter shade: #008dd7 */
+
+/* Geneseo color: #131f37 */
+/* Geneseo lighter shade: #32518f */
+/* Even lighter #3a5fa9 */
+/* Lightest #466ebf */
+
+
 /* Carrot color: #e67e22 */
 
 
@@ -15,7 +28,7 @@
 html,
 body {
     background-color: #fff;
-    color: #494949;
+    color: #131f37;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -50,6 +63,7 @@ section {
     - html doesn't record pixels for elements with float property
     - restore pixel calculation to correct padding issues concerning elements that proceed elements with float properties
 */
+
 .clearfix {zoom: 1}
 .clearfix:after {
     content: '.';
@@ -92,7 +106,7 @@ h2 {
 h2:after {
     display: block;
     height: 2px;
-    background-color: #e67e22;
+    background-color: #32518f; /* Lighter geneseo */
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -102,7 +116,6 @@ h2:after {
 h3 {
     font-size: 110%;
     margin-bottom: 15px;
-    
 }
 
 
@@ -131,7 +144,7 @@ h3 {
     font-size: 250%;
     /* Block in order to force a line-break */
     display: block;
-    color: #e67e22;
+    color: #0077B5;
     margin-bottom: 10px;
     margin-left: 50%;
     -webkit-transform: translate(-30%, 0);
@@ -141,7 +154,7 @@ h3 {
 .icon-small {
     /* To give each icon space afterwards and access to width class */
     display: inline-block;
-    color: #e67e22;
+    color: #0077B5;
     width: 30px;
     font-size: 120%;
     margin-right: 10px;
@@ -155,17 +168,17 @@ h3 {
 
 a:link,
 a:visited {
-    color: #e67e22;
+    color: #3a5fa9;
     text-decoration: none;
     padding-bottom: 1px;
-    border-bottom: 1px solid #e67e22;
+    border-bottom: 1px solid #3a5fa9;
     -webkit-transition: border-bottom 200ms, color 200ms;
     transition: border-bottom 200ms, color 200ms;
 }
 
 a:hover,
 a:active {
-    color: #555;
+    color: #466ebf;
     border-bottom: 1px solid transparent;
 }
 
@@ -190,23 +203,23 @@ input[type=submit] {
 .btn-full:link, 
 .btn-full:visited,
 input[type=submit] {
-    background-color: #e67e22;
-    border: 1px solid #e67e22;
+    background-color: #0077B5;
+    border: 1px solid #0077B5;
     margin-right: 15px;
 }
 
 .btn-ghost:link, 
 .btn-ghost:visited {
-    border: 1px solid #e67e22;
-    color: #e67e22;
+    border: 1px solid #0077B5;
+    color: #0077B5;
 }
 
 .btn:hover, 
 .btn:active,
 input[type=submit]:hover,
 input[type=submit]:active {
-    background-color: #bf6516;
-    border: 1px solid #bf6516;
+    background-color: #005682;
+    border: 1px solid #005682;
     color: #fff;
 }
 
@@ -215,8 +228,7 @@ input[type=submit]:active {
 /* ------------------------------------------- */
 
 header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0,0,0,0.7))), url(img/jumbotron-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)), url(img/jumbotron-min.jpg);
+    background-image: linear-gradient(#131f37, rgba(0,0,0,0.0),rgba(0,0,0,0.7)), url(img/web_me.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -246,7 +258,7 @@ header {
 .main-nav {
     float: right;
     list-style: none;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .main-nav li {
@@ -257,20 +269,20 @@ header {
 .main-nav li a:link,
 .main-nav li a:visited {
     /* Padding: Top-Bottom, Left-Right */
-    padding: 8px 0;
+    padding: 5px 0;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 90%;
-    border-bottom: 2px solid #e67e22 transparent;
+    border-bottom: 1.8px solid #3a5fa9;
     -webkit-transition: 200ms;
     transition: 200ms;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #e67e22;
-    padding-bottom: 13px;
+    border-bottom: 2px solid #466ebf;
+    padding-bottom: 7.5px;
 }
 
 .back-to-top {
@@ -319,7 +331,7 @@ header {
 
 .sticky .main-nav li a:hover,
 .sticky .main-nav li a:active {
-    border-bottom: 2px solid #e67e22;
+    border-bottom: 2px solid #0077B5;
 }
 
 .sticky .logo { display: none; }
@@ -337,82 +349,15 @@ header {
     display: inline-block;
 }
 
-/*
-.meal-photo {
-    // Share exact width of parent: .meals-showcase li 
-    width: 100%;
-    margin: 0;
-    //prevent image (after being transformed to 115%) from overflowing onto other figure containers 
-    //that surround it
-    overflow: hidden;
-    background-color: #000;
+/* ------------------------------------------- */
+/* ------- ABOUT ME ------- */
+/* ------------------------------------------- */
+
+.section-about-me {
+    
 }
 
-.meal-photo img {
-    opacity: 0.7;
-    //Share exact width of parent: .meal-photo
-    width: 100%;
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-    -webkit-transition: opacity 500ms, -webkit-transform 500ms;
-    transition: opacity 500ms, -webkit-transform 500ms;
-    transition: transform 500ms, opacity 500ms;
-    transition: transform 500ms, opacity 500ms, -webkit-transform 500ms;
-}
 
-.meal-photo img:hover {
-    opacity: 1;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
-}
-
-*/
-
-.btn-app img {
-    height: 50px;
-    width: auto;
-    margin-right: 10px;
-}
-
-blockquote {
-    padding: 2%;
-    /* can simply choose italic b/c we included with google fonts at <head> */
-    font-style: italic;
-    line-height: 145%;
-    position: relative;
-    margin-top: 40px;
-}
-
-blockquote:before {
-    display: block;
-    /* css-tricks.com/snippets/html/glyphs */
-    content: "\201C"; 
-    font-size: 400%;
-    position: absolute;
-    top: 0;
-    left: -8px;
-}
-
-blockquote:after {
-    display: block;
-    content:"\201D";
-    font-size: 400%;
-    position: absolute;
-    left: 93%;
-}
-
-cite {
-    font-size: 90%;
-    margin-top: 25px;
-    display: block;
-}
-
-cite img {
-    border-radius: 50%;
-    height: 75px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
 
 /* ------------------------------------------- */
 /* ------- FOOTER ------- */
