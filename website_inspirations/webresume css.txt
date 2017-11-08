@@ -1,0 +1,33 @@
+http://mustachethemes.com/themeforest/html/pro-resume/demo/index.html
+
+article {
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+article::before,
+article::after {
+  background: inherit;
+  content: '';
+  height: 75%;
+  left: -25%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  width: 150%;
+  z-index: -1;
+}
+article:first-child::before,
+article:first-child::after {
+  display: none;
+}

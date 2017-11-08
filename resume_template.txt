@@ -1,0 +1,10 @@
+About (+ Interests?)
+	- Email, birthday, mobile, address, name, number (Icon bordered with filled background color)
+	- Signature 
+Education
+Work Experience
+Portfolio 
+	- Latest Articles
+	- Github
+	- Research
+Udemy Certifricates
